@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context 
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/tx 
+                           http://www.springframework.org/schema/tx/spring-tx.xsd
+                           http://www.springframework.org/schema/mvc 
+                           http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+                           
+	<!-- auto wiring enabling -->
+		<context:component-scan base-package="com.gcompany.hangandhave"/>
+	<!-- //auto wiring enabling -->
+	
+	<!-- Transactions annotations enabling --> 
+		<tx:annotation-driven transaction-manager="transactionManager" />
+		<mvc:annotation-driven/>
+	<!-- //Transactions annotations enabling -->
+	
+	<!-- properties file configurations -->
+		<context:property-placeholder location="classpath:resources/database.properties"/>
+	<!-- properties file configurations -->
+	
+	<!-- Exception Configurations -->
+		<!-- <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+			<property name="exceptionMappings">
+				<props>
+					<prop key="com.fms.exception.FMSGenericException">GenericExceptionPage</prop>
+					<prop key="java.lang.Exception">error</prop>
+				</props>
+			</property>
+		</bean> -->
+	<!--// Exception Configurations -->
+
+	<!-- jasper reports Configurations -->
+		<!-- <bean class="org.springframework.web.servlet.view.XmlViewResolver">
+			<property name="location" value="/WEB-INF/jasper-views.xml"/>
+			<property name="order" value="0"/>
+		</bean> -->
+	<!--// jasper reports Configurations -->
+	
+<!-- Tiles Class Configuration -->
+    	<bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">  
+        	<property name="viewClass">  
+	            <value>  
+	                org.springframework.web.servlet.view.tiles2.TilesView  
+	            </value>  
+        	</property>  
+    	</bean>
+<!-- //Tiles Class Configuration -->
+    	
+    <!-- tiles Location Configuration -->  
+    	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">  
+        	<property name="definitions">  
+	            <list>  
+	                <value>/WEB-INF/tiles.xml</value>  
+	            </list>  
+        	</property>  
+    	</bean>
+    <!-- //tiles Location Configuration -->
+    
+	<!-- database properties Mysql and Oracle-->
+		<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+			<property name="driverClassName" value="${database.driver}" />
+			<property name="url" value="${database.url}"/>
+			<property name="username" value="${database.user}" />
+			<property name="password" value="${database.password}" />
+		</bean>
+    <!--// database properties Oracle-->
+	
+	<!-- session factory properties --> 
+		<bean class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean" id="sessionFactory">  
+ 			<property name="dataSource" ref="dataSource"/>  
+ 			<property name="annotatedClasses">  
+				<list> 
+					
+				</list>  
+			</property>   	 	
+			<property name="hibernateProperties">  
+	        	<props>
+	        		<!-- for MYSQL and oracle db queries -->
+	                <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+	                <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>   
+	                <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>               
+	            </props>
+			</property>
+		</bean>
+	<!-- //session factory properties -->
+
+		<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+			<property name="sessionFactory" ref="sessionFactory"/>
+		</bean>
+	<!-- //HibernateTemplate properties -->
+	
+	<!-- Spring viewResolver -->
+		<bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+			<property name="prefix" value="/WEB-INF/view/"/>
+			<property name="suffix" value=".jsp"/>
+		</bean>
+	<!--// Spring viewResolver -->
+
+<!-- Mailing Configurarions -->
+		<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+			<property name="host" value="${javamail.host}" />
+			<property name="port" value="${javamail.port}" />
+			<property name="username" value="${javamail.username}" />
+			<property name="password" value="${javamail.password}" />
+			<property name="javaMailProperties">
+				<props>
+					<prop key="mail.transport.protocol">${javamail.protocol}</prop>
+					<prop key="mail.smtp.auth">${javamail.auth}</prop>
+					<prop key="mail.smtp.starttls.enable">${javamail.enable}</prop>
+				</props>
+			</property>
+		</bean>
+	<!--// Mailing Configurarions -->
+
+</beans>
