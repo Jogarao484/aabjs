@@ -32,6 +32,7 @@ public class FoodAndSeatServlets extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String name = (String)request.getParameter("name");
 	}
 
 }
