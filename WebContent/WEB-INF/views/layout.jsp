@@ -8,8 +8,9 @@
 </head>
 <body>
 		<tiles:insertAttribute name="header"/>
-		<tiles:insertAttribute name="menu" />
+		<tiles:insertAttribute name="leftmenu" />		
 		<tiles:insertAttribute name="body" />
+		<tiles:insertAttribute name="rightmenu"/>
     	<tiles:insertAttribute name="footer" />
 </body>
 </html>
