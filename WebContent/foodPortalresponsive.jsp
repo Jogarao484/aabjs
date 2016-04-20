@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Great Taste a Hotels and Restaurants Category Flat Bootstrap Responsive Website Template | Blog :: w3layouts</title>
+<title>hang and have</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -71,7 +71,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
 								quis nostrud exercitation.</p>
 								<div style="margin-right:45%">
-							<a href="single.html"><span style="margin-right:65%" class="glyphicon glyphicon-play-circle" aria-hidden="true">ADD</span></a>
+							<a href="single.html"><span  class="glyphicon glyphicon-plus" aria-hidden="true">ADD</span></a>
 								</div>
 						</div>
 						<div class="clearfix"> </div>
@@ -87,7 +87,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
 								quis nostrud exercitation.</p>
-							<a href="single.html"><span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span></a>
+							<a href="single.html"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -101,7 +101,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
 								quis nostrud exercitation.</p>
-							<a href="single.html"><span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span></a>
+							<a href="single.html"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -115,7 +115,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
 								quis nostrud exercitation.</p>
-							<a href="single.html"><span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span></a>
+							<a href="single.html"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -129,7 +129,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
 								quis nostrud exercitation.</p>
-							<a href="single.html"><span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span></a>
+							<a href="single.html"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -143,7 +143,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
 								quis nostrud exercitation.</p>
-							<a href="single.html"><span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span></a>
+							<a href="single.html"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
