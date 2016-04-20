@@ -48,10 +48,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<nav class="stroke">
 								<ul class="nav navbar-nav">
 									<li><a href="index.html" class="hvr-underline-from-left"><i class="home1"></i>Home</a></li>
-									<li><a href="photos.html" class="hvr-underline-from-left"><i class="picture1"></i>Photos</a></li>
-									<li class="active"><a href="blog.html"><i class="edit"></i>Blog</a></li>
-									<li><a href="short-codes.html" class="hvr-underline-from-left"><i class="text-size1"></i>Short Codes</a></li>
-									<li><a href="mail.html" class="hvr-underline-from-left"><i class="envelope1"></i>Mail US</a></li>
+									<li><a href="photos.html" class="hvr-underline-from-left"><i class="picture1"></i>Lunch</a></li>
+									<li class="active"><a href="blog.html"><i class="edit"></i>Dinner</a></li>
+									<li><a href="short-codes.html" class="hvr-underline-from-left"><i class="text-size1"></i>Snacks</a></li>
+									<li><a href="mail.html" class="hvr-underline-from-left"><i class="envelope1"></i>Drinks</a></li>
 								</ul>
 							</nav>
 						</div>
@@ -70,9 +70,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
 								quis nostrud exercitation.</p>
-								<div style="margin-right:45%">
+								
 							<a href="single.html"><span  class="glyphicon glyphicon-plus" aria-hidden="true">ADD</span></a>
-								</div>
+							
+								
 						</div>
 						<div class="clearfix"> </div>
 					</div>
