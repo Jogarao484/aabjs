@@ -7,10 +7,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 html, body{
     font-size: 100%;
 	background:	#fff;
+	margin-right: 40%;
+	margin-top:2%;
 	font-family: 'Open Sans', sans-serif;
 }
 p,body{
-	margin:0;
+	
+	padding: 1em;
 }
 h1,h2,h3,h4,h5,h6{
 	font-family: 'Comfortaa', cursive;
@@ -25,14 +28,17 @@ body a:hover{
 }
 .banner-body{
 	background:url(../images/banner.png) 0px 0px;
-	padding:5em 0;
+	padding:4em 0em;
+	
 }
 .banner-body-content {
-    padding: 4em 3em;
+    padding: 4em 0em;
     background: #fff;
 	box-shadow:0px 0px 10px #E0E0E0;
 	-webkit-box-shadow:0px 0px 10px #E0E0E0;
 	-moz-box-shadow:0px 0px 10px #E0E0E0;
+	margin-right:10%;
+	margin-left:5%;
 }
 /*-- logo --*/
 .logo{

@@ -70,7 +70,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
 								quis nostrud exercitation.</p>
-							<a href="single.html"><span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span></a>
+								<div style="margin-right:45%">
+							<a href="single.html"><span style="margin-right:65%" class="glyphicon glyphicon-play-circle" aria-hidden="true">ADD</span></a>
+								</div>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
