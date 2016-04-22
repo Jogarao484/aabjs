@@ -13,7 +13,7 @@ html, body{
 }
 p,body{
 	
-	padding: 1em;
+	padding: 0em;
 }
 h1,h2,h3,h4,h5,h6{
 	font-family: 'Comfortaa', cursive;
@@ -32,8 +32,9 @@ body a:hover{
 	
 }
 .banner-body-content {
-    padding: 4em 0em;
+    padding: 2em 0em;
     background: #fff;
+    
 	box-shadow:0px 0px 10px #E0E0E0;
 	-webkit-box-shadow:0px 0px 10px #E0E0E0;
 	-moz-box-shadow:0px 0px 10px #E0E0E0;
@@ -1877,4 +1878,51 @@ h2.typoh2{
 		font-size: .9em;
 		padding: 0.8em 0;
 	}
+}
+
+
+.containerExpand {
+	
+	
+	overflow:visible;}
+
+.content {
+	font-family: 'Comfortaa', cursive;
+	
+	background:#e5cd6c;
+	text-align: center ;
+	text-shadow: fuchsia;
+	box-shadow:0px 0px 10px #E0E0E0;
+	-webkit-box-shadow:0px 0px 10px #E0E0E0;
+	-moz-box-shadow:0px 0px 10px #E0E0E0;
+	height:30px;
+	width:200px;}
+
+.contnt {
+	text-align:left;
+	overflow: auto;
+	background: #fff;
+	box-shadow:0px 0px 10px #E0E0E0;
+	-webkit-box-shadow:0px 0px 10px #E0E0E0;
+	-moz-box-shadow:0px 0px 10px #E0E0E0;
+	font-family: 'Open Sans', sans-serif;
+	height:200px;
+	width:200px;}
+	
+	#header,
+#header-inner { /* Note #1 */
+   
+    
+}
+	#page {
+	margin-top:-3.4%;
+    width: 200px;
+	height:400px;
+	margin-left: 105% ;
+	background:url(../images/banner.png) 0px 0px;
+}
+	
+	.scrolling { /* Note #2 */
+    position: fixed;
+    top: 0;
 }

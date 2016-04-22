@@ -12,6 +12,25 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<!-- auto expand table javascript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script type="text/javascript" src="js/calculationTab.js"></script>
+<script type="text/javascript" src="js/autoExpand.js"></script>
+<!-- <script>
+$(document).ready(function() {
+    $(window).scroll( function(){
+        $('.containerExpand').each( function(i){
+            var bottom_of_object = $(this).position().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            if( bottom_of_window > bottom_of_object ){
+                $(this).animate({'opacity':'1'},500);
+            }
+        }); 
+    });
+});
+</script> -->
 <!-- //for-mobile-apps -->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -217,6 +236,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="clearfix"></div>
 				</div> -->
 			</div> 
+   <div id="page">
+   <div id="header">
+        <div id="header-inner">
+   
+   <div class="containerExpand">
+
+  <div class="content" >You have ordered</div>
+    
+	<div class="contnt">
+   <div> veg - chees :     	75.0 rs</div>
+    <div>Checken 65 :     	85.0 rs</div>
+    <div>chicken hydrabadi :  75.0 rs</div>
+    <div>veg - chees:     	75.0 rs</div>
+    <div>dal tadka	:      	105.0 rs</div>
+    <div>veg - chees :    	75.0 rs</div> 
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
 			
 			<div class="col-xs-3 banner-body-left">
 			
