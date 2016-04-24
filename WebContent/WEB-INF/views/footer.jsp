@@ -1,2 +1,2 @@
 <hr>
-<h3>This is Food Section</h3>
+<h3>This is Footer</h3>

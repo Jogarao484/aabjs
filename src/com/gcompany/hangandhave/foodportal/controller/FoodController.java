@@ -7,6 +7,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -55,9 +58,23 @@ public class FoodController {
 	}
 	
 	@RequestMapping(value="/index")
-	public ModelAndView getIndexPage(){
+	public ModelAndView getIndexPage(Map<String, Object> model){
 		LOGGER.info("redirecting index page to user...");
 		ModelAndView modelAndView = new ModelAndView();
+		DateFormat dateFormat = new SimpleDateFormat("HH");
+		Date date = new Date();		
+		int hours = Integer.parseInt(dateFormat.format(date));
+		String foodItemName = getFoodItemName(hours);
+		List<FoodModel> foodItems = null;		
+		try {
+			foodItems = foodService.getFoodItems(foodItemName);
+		} catch(CannotCreateTransactionException ccte){
+			model.put("message", "<br><font color='red'>Please Check Database Schema & Database Schema username & password.</font>");
+		} catch (Exception e) {
+			System.out.println("Main Exception"+e);
+		}
+		model.put("foodItems", foodItems);
+		model.put("foodMenu", foodItemName);
 		modelAndView.setViewName("Home");
 		return modelAndView;
 	}
@@ -71,7 +88,7 @@ public class FoodController {
 		try {
 			foodItems = foodService.getFoodItems("Breakfast");
 		} catch(CannotCreateTransactionException ccte){
-			model.put("message", "<font color='red'>Please Check Database Schema &<br>Database Schema username & password.</font>");
+			model.put("message", "<br><font color='red'>Please Check Database Schema & Database Schema username & password.</font>");
 		} catch (Exception e) {
 			System.out.println("Main Exception"+e);
 		}	
@@ -89,7 +106,7 @@ public class FoodController {
 		try {
 			foodItems = foodService.getFoodItems("SoftDrinks");
 		} catch(CannotCreateTransactionException ccte){
-			model.put("message", "<font color='red'>Please Check Database Schema &<br>Database Schema username & password.</font>");
+			model.put("message", "<br><font color='red'>Please Check Database Schema & Database Schema username & password.</font>");
 		} catch (Exception e) {
 			System.out.println("Main Exception"+e);
 		}	
@@ -107,7 +124,7 @@ public class FoodController {
 		try {
 			foodItems = foodService.getFoodItems("LunchItems");
 		} catch(CannotCreateTransactionException ccte){
-			model.put("message", "<font color='red'>Please Check Database Schema &<br>Database Schema username & password.</font>");
+			model.put("message", "<br><font color='red'>Please Check Database Schema & Database Schema username & password.</font>");
 		} catch (Exception e) {
 			System.out.println("Main Exception"+e);
 		}	
@@ -125,7 +142,7 @@ public class FoodController {
 		try {
 			foodItems = foodService.getFoodItems("DinnerItems");
 		} catch(CannotCreateTransactionException ccte){
-			model.put("message", "<font color='red'>Please Check Database Schema &<br>Database Schema username & password.</font>");
+			model.put("message", "<br><font color='red'>Please Check Database Schema & Database Schema username & password.</font>");
 		} catch (Exception e) {
 			System.out.println("Main Exception"+e);
 		}			
@@ -143,11 +160,10 @@ public class FoodController {
 		try {
 			foodItems = foodService.getFoodItems("SnacksItems");
 		} catch(CannotCreateTransactionException ccte){
-			model.put("message", "<font color='red'>Please Check Database Schema &<br>Database Schema username & password.</font>");
+			model.put("message", "<br><font color='red'>Please Check Database Schema & Database Schema username & password.</font>");
 		} catch (Exception e) {
 			System.out.println("Main Exception"+e);
-		}		
-		LOGGER.info("The List of Food Items are : "+foodItems.size());
+		}
 		model.put("foodItems", foodItems);
 		model.put("foodMenu", "Snacks");
 		modelAndView.setViewName("FoodItems");
@@ -206,4 +222,19 @@ public class FoodController {
 		}
 		return modelAndView;
 	}		
+		public String getFoodItemName(int hours){
+			String foodItemName = "";
+			if(hours>=7 && hours<12){
+				foodItemName = "Breakfast";
+			} else if(hours>=12 && hours<16){
+				foodItemName = "LunchItems";
+			} else if(hours>=16 && hours<19){
+				foodItemName = "SnacksItems";
+			} else if(hours>=19 && hours<23){
+				foodItemName = "DinnerItems";
+			} else{
+				foodItemName = "SoftDrinks";
+			}
+			return foodItemName;
+		}
 }

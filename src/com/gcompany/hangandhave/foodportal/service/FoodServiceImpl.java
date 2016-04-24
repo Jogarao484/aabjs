@@ -76,6 +76,5 @@ public class FoodServiceImpl implements FoodService {
 	@Override
 	public List<FoodModel> getFoodItems(String foodItemName) {
 		return foodDao.getFoodItems(foodItemName);
-	}
-
+	}	
 }

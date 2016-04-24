@@ -4,7 +4,7 @@
 <table id="object-list" class="display" border="1">
 	<thead>
 		<tr>
-			<td colspan="7">${foodMenu} Menu
+			<td colspan="7" align="center">${foodMenu} Menu
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${message}</td>
 		</tr>
 		<tr>
@@ -39,7 +39,7 @@
 						}
 				%> --%>
 				<td><img src="${pageContext.servletContext.contextPath }/skydiningnew?foodId=${items.foodId}" /></td>
-				<td><img alt="Sorry No image found" src="<c:out value="${items.fileData}"></c:out>"></td>
+				<%-- <td><img alt="Sorry No image found" src="<c:out value="${items.fileData}"></c:out>"></td> --%>
 				<%-- <td><a href="AddItems.htm?foodId=${items.foodId}&foodCategory=${items.foodCategory}&description=${items.description}&imageName=${items.imageName}&fileType=${items.fileType}&cost=${items.cost}">Update</a></td>
 						    		<td><a href="deleteItems.htm?foodId=${items.foodId}" onclick="return confirm('Are you sure Do You want to DELETE this Food Item?')">Delete</a></td> --%>
 			</tr>

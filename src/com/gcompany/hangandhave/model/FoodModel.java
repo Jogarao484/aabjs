@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.sql.Blob;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -53,11 +54,11 @@ public class FoodModel implements Serializable {
 	@Column(name="FILE_DATA")
 	@Lob
 	private Blob fileData;
-	
-	@Column(name="FILE_TYPE")
+		
+	@Column(name="FILE_TYPE")//,columnDefinition="varchar(200) default 'jpeg,jpg'"
 	private String fileType;
 	
-	@Column(name="COST")
+	@Column(name="COST")//,columnDefinition="Decimal(6,2) default '100.00'"
 	private float cost;
 
 	/**
