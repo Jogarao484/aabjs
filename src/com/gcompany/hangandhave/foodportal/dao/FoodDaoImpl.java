@@ -9,10 +9,13 @@ import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.exception.DataException;
+import org.hibernate.util.JDBCExceptionReporter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.gcompany.hangandhave.exception.FoodExceptions;
 import com.gcompany.hangandhave.model.FoodModel;
 
 /**
@@ -47,12 +50,15 @@ public class FoodDaoImpl implements FoodDao {
 			LOGGER.info("Saving the FoodModel...");
 			Session session = sessionFactory.getCurrentSession();
 			session.save(foodModel);
-			//			Write exception for success...
+			FoodExceptions.setExceptionName("The Food Item Successfully Saved...");
 			flag = true;
 			LOGGER.info("Successfully Saved...");
+		} catch(DataException de){
+			FoodExceptions.setExceptionName("The image must be less than 63KB.");
+			LOGGER.error("The Error is : "+de);
 		} catch (Exception e) {
 			//			Write exception for failure...
-			flag = false;
+//			flag = false;
 			LOGGER.error("The Error is : "+e);
 		}		
 		return flag;

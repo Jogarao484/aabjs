@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.gcompany.hangandhave.exception.FoodExceptions;
 import com.gcompany.hangandhave.foodportal.service.FoodService;
 import com.gcompany.hangandhave.model.FoodModel;
 
@@ -176,7 +177,7 @@ public class FoodController {
 
         FileOutputStream fos;
 		try {
-			fos = new FileOutputStream("D:\\test\\image.jpg");
+			fos = new FileOutputStream("D:\\"+file.getOriginalFilename());
             try {
 				fos.write(bFile);
 				fos.close();
@@ -195,11 +196,11 @@ public class FoodController {
 			e.printStackTrace();
 		}
 		if(flag){
-			model.put("message", "The Food Item Successfully Saved...");
+			model.put("message", FoodExceptions.getExceptionName());
 			LOGGER.info("Food Item Saved Successfully...");
 			modelAndView.setViewName("Home");
 		}else {
-			model.put("message", "Sorry, Food Item not saved successfully...");
+			model.put("message", FoodExceptions.getExceptionName()/*"Sorry, Food Item not saved successfully..."*/);
 			LOGGER.info("Food Item Not Saved Successfully...");
 			modelAndView.setViewName("Home");
 		}
