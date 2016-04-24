@@ -7,7 +7,7 @@ TESTING
 <form method="post" action="AddItems.htm" commandName="document" enctype="multipart/form-data">
 	<table border="1">
 		<tr>
-			<td colspan="2">${message}<span id="filePath"></span></td>
+			<td colspan="2"><b>${message}</b><span id="filePath"></span></td>
 		</tr>
 		<tr>
 			<th>FOOD_CATEGORY</th>

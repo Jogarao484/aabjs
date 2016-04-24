@@ -102,8 +102,15 @@ public class FoodController {
 	public ModelAndView getLunchFood(Map<String, Object>model){
 		ModelAndView modelAndView = new ModelAndView();
 		LOGGER.info("Getting LunchItems from DB");
-//		List<FoodModel> foodItems = null;		
-		model.put("foodItems", foodService.getFoodItems("LunchItems"));
+		List<FoodModel> foodItems = null;		
+		try {
+			foodItems = foodService.getFoodItems("LunchItems");
+		} catch(CannotCreateTransactionException ccte){
+			model.put("message", "<font color='red'>Please Check Database Schema &<br>Database Schema username & password.</font>");
+		} catch (Exception e) {
+			System.out.println("Main Exception"+e);
+		}	
+		model.put("foodItems", foodItems);
 		model.put("foodMenu", "Lunch");
 		modelAndView.setViewName("FoodItems");
 		return modelAndView;
@@ -113,8 +120,15 @@ public class FoodController {
 	public ModelAndView getDinnerFood(Map<String, Object>model){
 		ModelAndView modelAndView = new ModelAndView();
 		LOGGER.info("Getting DinnerItems from DB");
-//		List<FoodModel> foodItems = null;		
-		model.put("foodItems", foodService.getFoodItems("DinnerItems"));
+		List<FoodModel> foodItems = null;		
+		try {
+			foodItems = foodService.getFoodItems("DinnerItems");
+		} catch(CannotCreateTransactionException ccte){
+			model.put("message", "<font color='red'>Please Check Database Schema &<br>Database Schema username & password.</font>");
+		} catch (Exception e) {
+			System.out.println("Main Exception"+e);
+		}			
+		model.put("foodItems", foodItems);
 		model.put("foodMenu", "Dinner");
 		modelAndView.setViewName("FoodItems");
 		return modelAndView;
@@ -123,9 +137,15 @@ public class FoodController {
 	@RequestMapping(value="/SnacksItems")
 	public ModelAndView getSnacksItems(Map<String, Object>model){
 		ModelAndView modelAndView = new ModelAndView();
-		List<FoodModel> foodItems = null;		
 		LOGGER.info("Getting SnacksItems from DB");
-		foodItems = foodService.getFoodItems("SnacksItems");
+		List<FoodModel> foodItems = null;		
+		try {
+			foodItems = foodService.getFoodItems("SnacksItems");
+		} catch(CannotCreateTransactionException ccte){
+			model.put("message", "<font color='red'>Please Check Database Schema &<br>Database Schema username & password.</font>");
+		} catch (Exception e) {
+			System.out.println("Main Exception"+e);
+		}		
 		LOGGER.info("The List of Food Items are : "+foodItems.size());
 		model.put("foodItems", foodItems);
 		model.put("foodMenu", "Snacks");
@@ -137,8 +157,7 @@ public class FoodController {
 		@RequestMapping(value = "/AddItems", method = RequestMethod.POST)
 		public ModelAndView saveItems(@ModelAttribute("foodModel") FoodModel foodModel, @RequestParam("file") MultipartFile file, Map<String, Object> model, HttpServletRequest request){
 		ModelAndView modelAndView = new ModelAndView();
-		LOGGER.info("Storing Food Items into DB");
-//		List<FoodModel> foodItems = null;	
+		LOGGER.info("Storing Food Items into DB");	
 		boolean flag = false;		
 		String filePath = request.getParameter("filePath");
 	/*	try {
@@ -157,7 +176,7 @@ public class FoodController {
 
         FileOutputStream fos;
 		try {
-			fos = new FileOutputStream("D:/image.jpg");
+			fos = new FileOutputStream("D:\\test\\image.jpg");
             try {
 				fos.write(bFile);
 				fos.close();
