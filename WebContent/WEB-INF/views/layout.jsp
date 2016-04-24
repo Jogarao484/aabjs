@@ -4,6 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="scripts/JQuery/JQuery-1.11.1.min.js"></script>
+<script type="text/javascript" src="scripts/JQuery/foodportal.js"></script>
 <title><tiles:insertAttribute name="title" ignore="true" /></title>
 </head>
 <body>

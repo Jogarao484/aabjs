@@ -77,8 +77,8 @@
 		<bean class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean" id="sessionFactory">  
  			<property name="dataSource" ref="dataSource"/>  
  			<property name="annotatedClasses">  
-				<list> 
-					
+				<list>  
+					<value>com.gcompany.hangandhave.model.FoodModel</value>				
 				</list>  
 			</property>   	 	
 			<property name="hibernateProperties">  
@@ -119,5 +119,12 @@
 			</property>
 		</bean>
 	<!--// Mailing Configurarions -->
-
+	
+	<!-- Upload File Configuratoins -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- one of the properties available; the maximum file size in bytes(max size < 63KB) -->
+		<property name="maxUploadSize" value="10000000" />
+	</bean>
+<!--// Upload File Configuratoins -->
 </beans>

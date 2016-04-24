@@ -15,5 +15,5 @@ public interface FoodDao {
 	boolean saveFoodItem(FoodModel foodModel);
 	boolean updateFoodItem(FoodModel foodModel);
 	boolean deleteFoodItem(FoodModel foodModel);
-	List<FoodModel> getFoodItems();	
+	List<FoodModel> getFoodItems(String foodItemName);	
 }

@@ -4,11 +4,13 @@
 package com.gcompany.hangandhave.model;
 
 import java.io.Serializable;
+import java.sql.Blob;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 /**
@@ -37,19 +39,23 @@ public class FoodModel implements Serializable {
 	@Id
 	@GeneratedValue
 	@Column(name="FOOD_ID")
-	private long foodId;
-	
+	private Integer foodId;
+
 	@Column(name="FOOD_CATEGORY")
 	private String foodCategory;
 	
-	@Column(name="FOOD_NAME")
-	private String foodName;
-	
+	@Column(name="DESCRIPTION")
+	private String description;
+
 	@Column(name="IMAGE_NAME")
 	private String imageName;
-	
+
 	@Column(name="FILE_DATA")
-	private byte [] fileData;
+	@Lob
+	private Blob fileData;
+	
+	@Column(name="FILE_TYPE")
+	private String fileType;
 	
 	@Column(name="COST")
 	private float cost;
@@ -57,14 +63,14 @@ public class FoodModel implements Serializable {
 	/**
 	 * @return the foodId
 	 */
-	public long getFoodId() {
+	public Integer getFoodId() {
 		return foodId;
 	}
 
 	/**
 	 * @param foodId the foodId to set
 	 */
-	public void setFoodId(long foodId) {
+	public void setFoodId(Integer foodId) {
 		this.foodId = foodId;
 	}
 
@@ -80,20 +86,6 @@ public class FoodModel implements Serializable {
 	 */
 	public void setFoodCategory(String foodCategory) {
 		this.foodCategory = foodCategory;
-	}
-
-	/**
-	 * @return the foodName
-	 */
-	public String getFoodName() {
-		return foodName;
-	}
-
-	/**
-	 * @param foodName the foodName to set
-	 */
-	public void setFoodName(String foodName) {
-		this.foodName = foodName;
 	}
 
 	/**
@@ -113,15 +105,29 @@ public class FoodModel implements Serializable {
 	/**
 	 * @return the fileData
 	 */
-	public byte[] getFileData() {
+	public Blob getFileData() {
 		return fileData;
 	}
 
 	/**
 	 * @param fileData the fileData to set
 	 */
-	public void setFileData(byte[] fileData) {
+	public void setFileData(Blob fileData) {
 		this.fileData = fileData;
+	}
+
+	/**
+	 * @return the fileType
+	 */
+	public String getFileType() {
+		return fileType;
+	}
+
+	/**
+	 * @param fileType the fileType to set
+	 */
+	public void setFileType(String fileType) {
+		this.fileType = fileType;
 	}
 
 	/**
@@ -145,24 +151,46 @@ public class FoodModel implements Serializable {
 		return serialVersionUID;
 	}
 
-	public FoodModel(long foodId, String foodCategory, String foodName,
-			String imageName, byte[] fileData, float cost) {
+	/**
+	 * @return the description
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * @param description the description to set
+	 */
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public FoodModel(Integer foodId) {
+		super();
+		this.foodId = foodId;
+	}
+
+	public FoodModel(Integer foodId, String foodCategory, String description,
+			String imageName, Blob fileData, String fileType, float cost) {
 		super();
 		this.foodId = foodId;
 		this.foodCategory = foodCategory;
-		this.foodName = foodName;
+		this.description = description;
 		this.imageName = imageName;
 		this.fileData = fileData;
+		this.fileType = fileType;
 		this.cost = cost;
 	}
 
-	public FoodModel(String foodCategory, String foodName, String imageName,
-			byte[] fileData, float cost) {
+	public FoodModel(String foodCategory, String description, String imageName,
+			Blob fileData, String fileType, float cost) {
 		super();
 		this.foodCategory = foodCategory;
-		this.foodName = foodName;
+		this.description = description;
 		this.imageName = imageName;
 		this.fileData = fileData;
+		this.fileType = fileType;
 		this.cost = cost;
-	}	
+	}
+	
 }
