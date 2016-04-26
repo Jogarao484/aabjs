@@ -30,7 +30,8 @@
 									<li class="active"><a href="Breakfast.htm"><i class="edit"></i>Breakfast</a></li>
 									<li><a href="SoftDrinks.htm" class="hvr-underline-from-left"><i class="text-size1"></i>SoftDrinks</a></li>
 									<li><a href="LunchItems.htm" class="hvr-underline-from-left"><i class="envelope1"></i>LunchItems</a></li>
-									<li><a href="DinnerItems.htm" class="hvr-underline-from-left"><i class="envelope1"></i>DinnerItems</a></li>
+									<li><a href="addfood.htm" class="hvr-underline-from-left"><i class="envelope1"></i>DinnerItems</a></li><li><a href="DinnerItems.htm" class="hvr-underline-from-left"><i class="envelope1"></i>DinnerItems</a></li>
+								
 								</ul>
 							</nav>
 						</div>

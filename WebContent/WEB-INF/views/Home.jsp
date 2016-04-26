@@ -75,7 +75,7 @@ TESTING
 		</c:forEach>
 	</tbody>
 </table> --%>
-<%-- <br><br><br><br>
+<br><br><br><br>
 <form method="post" action="AddItems.htm" commandName="document" enctype="multipart/form-data">
 	<table border="1">
 		<tr>
@@ -107,7 +107,7 @@ TESTING
 		</tr>
 	</table>
 </form>
-<br> --%>
+<br>
 <!-- <div class="">
 	<div class="foodAmtPlus"><input type="number" value="200" id="amtPlus"><img alt="image not available" src=""></div>
 	<div class="foodAmtMinus"><input type="number" value="100" id="amtMinus"><img alt="image not available" src=""></div>

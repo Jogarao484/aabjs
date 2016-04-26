@@ -57,6 +57,11 @@ public class FoodController {
 	public FoodController() {
 	}
 	
+	@RequestMapping(value="/addfood")
+	public String getAddFood(Map<String, Object> model){
+		return "addfood";
+	}
+	
 	@RequestMapping(value="/index")
 	public ModelAndView getIndexPage(Map<String, Object> model){
 		LOGGER.info("redirecting index page to user...");
