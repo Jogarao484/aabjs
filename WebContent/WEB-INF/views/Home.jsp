@@ -7,10 +7,32 @@ TESTING
 <%@page import="javassist.bytecode.stackmap.BasicBlock.Catch"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<table id="object-list" class="display" border="1">
+<div class="col-xs-9 banner-body-right">
+
+<c:forEach var="items" items="${foodItems}">
+	<div class="blog-grid">
+		<div class="col-xs-4 blog-grid-left">
+			<a href="single.html"><!-- <img src="images/1.jpg" alt=" " class="img-responsive" /> -->
+			<img src="${pageContext.servletContext.contextPath }/skydiningnew?foodId=${items.foodId}" class="img-responsive"/></a>
+		</div>
+		<div class="col-xs-8 blog-grid-right">
+			<h4>
+				<a href=""><c:out value="${items.foodName}"></c:out></a>
+			</h4>
+			<p><c:out value="${items.description}"></c:out></p>
+			<a href="single.html"><span class="glyphicon glyphicon-plus"
+				aria-hidden="true">ADD</span></a><br> ${foodMenu} Menu
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${message}
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</c:forEach>
+</div>
+
+<%-- <table id="object-list" class="display" border="1">
 	<thead>
 		<tr>
-			<td colspan="7" align="center">${foodMenu} Menu
+			<td colspan="7" align="center">${foodMenu}Menu
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${message}</td>
 		</tr>
 		<tr>
@@ -32,7 +54,7 @@ TESTING
 				<td><c:out value="${items.imageName}"></c:out></td>
 				<td><c:out value="${items.fileType}"></c:out></td>
 				<td><c:out value="${items.cost}"></c:out></td>
-				<%-- <%
+				<%
 					try{
 							response.setHeader("Content-Disposition", "inline;filename=\""+"${items.imageName}" + "\"");
 							OutputStream out1 = response.getOutputStream();
@@ -43,16 +65,17 @@ TESTING
 						}catch(Exception e){
 							e.printStackTrace();
 						}
-				%> --%>
-				<td><img src="${pageContext.servletContext.contextPath }/skydiningnew?foodId=${items.foodId}" /></td>
-				<%-- <td><img alt="Sorry No image found" src="<c:out value="${items.fileData}"></c:out>"></td> --%>
-				<%-- <td><a href="AddItems.htm?foodId=${items.foodId}&foodCategory=${items.foodCategory}&description=${items.description}&imageName=${items.imageName}&fileType=${items.fileType}&cost=${items.cost}">Update</a></td>
-						    		<td><a href="deleteItems.htm?foodId=${items.foodId}" onclick="return confirm('Are you sure Do You want to DELETE this Food Item?')">Delete</a></td> --%>
+				%>
+				<td><img
+					src="${pageContext.servletContext.contextPath }/skydiningnew?foodId=${items.foodId}" /></td>
+				<td><img alt="Sorry No image found" src="<c:out value="${items.fileData}"></c:out>"></td>
+				<td><a href="AddItems.htm?foodId=${items.foodId}&foodCategory=${items.foodCategory}&description=${items.description}&imageName=${items.imageName}&fileType=${items.fileType}&cost=${items.cost}">Update</a></td>
+						    		<td><a href="deleteItems.htm?foodId=${items.foodId}" onclick="return confirm('Are you sure Do You want to DELETE this Food Item?')">Delete</a></td>
 			</tr>
 		</c:forEach>
 	</tbody>
-</table>
-<br><br><br><br>
+</table> --%>
+<%-- <br><br><br><br>
 <form method="post" action="AddItems.htm" commandName="document" enctype="multipart/form-data">
 	<table border="1">
 		<tr>
@@ -84,8 +107,8 @@ TESTING
 		</tr>
 	</table>
 </form>
-<br>
-<div class="">
+<br> --%>
+<!-- <div class="">
 	<div class="foodAmtPlus"><input type="number" value="200" id="amtPlus"><img alt="image not available" src=""></div>
 	<div class="foodAmtMinus"><input type="number" value="100" id="amtMinus"><img alt="image not available" src=""></div>
 	<span id="totalAmountdiv"></span>
@@ -112,6 +135,6 @@ TESTING
 	</div>
 	<div class="price item-price ">Rs.145.00</div>
 	<div class="clear"></div>
-</li>
+</li> -->
 <!-- <span id="totalAmount"></span> -->
 

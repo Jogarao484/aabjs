@@ -7,7 +7,6 @@ import java.io.Serializable;
 import java.sql.Blob;
 
 import javax.persistence.Column;
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -45,6 +44,9 @@ public class FoodModel implements Serializable {
 	@Column(name="FOOD_CATEGORY")
 	private String foodCategory;
 	
+	@Column(name="FOOD_NAME")
+	private String foodName;
+	
 	@Column(name="DESCRIPTION")
 	private String description;
 
@@ -60,6 +62,20 @@ public class FoodModel implements Serializable {
 	
 	@Column(name="COST")//,columnDefinition="Decimal(6,2) default '100.00'"
 	private float cost;
+
+	/**
+	 * @return the foodName
+	 */
+	public String getFoodName() {
+		return foodName;
+	}
+
+	/**
+	 * @param foodName the foodName to set
+	 */
+	public void setFoodName(String foodName) {
+		this.foodName = foodName;
+	}
 
 	/**
 	 * @return the foodId
