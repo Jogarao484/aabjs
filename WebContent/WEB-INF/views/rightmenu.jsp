@@ -1,4 +1,4 @@
-<h1>Right Menu : Food Order's</h1>
+<!-- <h1>Right Menu : Food Order's</h1> -->
 
  <div id="page">
    <div id="header">

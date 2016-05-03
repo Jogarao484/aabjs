@@ -7,57 +7,60 @@ import java.io.Serializable;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
- * @author Jogarao U.
+ * @author Jogarao Uppada
  *
  */
-@Entity
-@Table(name="USER_REGISTRATION")
-public class UserRegistration implements Serializable {
+@Table(name="SIGNUP_SIGNIN")
+public class SignUpSignIn implements Serializable {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 6364124814227238427L;
+	private static final long serialVersionUID = -9014094364083686662L;
 
-	public UserRegistration() {
+	/**
+	 * Default Constructor
+	 */
+	public SignUpSignIn() {
 	}
-
 	@Id
 	@GeneratedValue
-	@Column(name="userId", length=10)
-	private Integer userId;
+	@Column(name="user_reg_no")
+	private int userRegNo;
 	
-	@Column(name="userName", length=35)
+	@Column(name="user_name")
 	private String userName;
 	
-	@Column(name="userRole", length=25)
+	@Column(name="email")	
+	private String email;
+	
+	@Column(name="user_role")
 	private String userRole;
 	
-	@Column(name="password", length=30)
-	private String password;
-
-	@OneToOne(mappedBy="userRegistration", cascade=CascadeType.ALL)
+	@Column(name="password")
+	private String password;	
+	
+	@OneToOne(mappedBy="signUpSignIn", cascade=CascadeType.ALL)
 	private Hotel hotel;
 
 	/**
-	 * @return the userId
+	 * @return the userRegNo
 	 */
-	public Integer getUserId() {
-		return userId;
+	public int getUserRegNo() {
+		return userRegNo;
 	}
 
 	/**
-	 * @param userId the userId to set
+	 * @param userRegNo the userRegNo to set
 	 */
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public void setUserRegNo(int userRegNo) {
+		this.userRegNo = userRegNo;
 	}
 
 	/**
@@ -72,6 +75,20 @@ public class UserRegistration implements Serializable {
 	 */
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	/**
+	 * @return the email
+	 */
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * @param email the email to set
+	 */
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	/**
@@ -123,15 +140,13 @@ public class UserRegistration implements Serializable {
 		return serialVersionUID;
 	}
 
-	public UserRegistration(Integer userId, String userName, String userRole,
+	public SignUpSignIn(String userName, String email, String userRole,
 			String password, Hotel hotel) {
 		super();
-		this.userId = userId;
 		this.userName = userName;
+		this.email = email;
 		this.userRole = userRole;
 		this.password = password;
 		this.hotel = hotel;
-	}
-	
-	
+	}	
 }

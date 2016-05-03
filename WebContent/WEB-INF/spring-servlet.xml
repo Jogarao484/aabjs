@@ -78,7 +78,9 @@
  			<property name="dataSource" ref="dataSource"/>  
  			<property name="annotatedClasses">  
 				<list>  
-					<value>com.gcompany.hangandhave.model.FoodModel</value>				
+					<value>com.gcompany.hangandhave.model.FoodModel</value>
+					<value>com.gcompany.hangandhave.model.SignUpSignIn</value>
+					<value>com.gcompany.hangandhave.model.Hotel</value>		
 				</list>  
 			</property>   	 	
 			<property name="hibernateProperties">  

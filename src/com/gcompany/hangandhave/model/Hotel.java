@@ -2,7 +2,6 @@
  * 
  */
 package com.gcompany.hangandhave.model;
-
 import java.io.Serializable;
 
 import javax.persistence.Column;
@@ -16,37 +15,36 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
-
-
 /**
- * @author Jogarao U.
+ * @author Jogarao Uppada
  *
  */
+
 @Entity
-@Table(name="hotel")
+@Table(name="HOTEL")
 public class Hotel implements Serializable {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 183027402973304667L;
+	private static final long serialVersionUID = 1145275182119535144L;
 
 	/**
-	 * 
+	 * Default Constructor
 	 */
 	public Hotel() {
 	}
-	
+
 	@Id
-	@Column(name="user_id",unique=true, nullable=false)
+	@Column(name="user_reg_no", unique=true, nullable=false)
 	@GeneratedValue(generator="gen")
-	@GenericGenerator(name="gen",strategy="foreign",parameters=@Parameter(name="property", value="USER_REGISTRATION"))
-	private Integer userId;
+	@GenericGenerator(name="gen",strategy="foreign",parameters=@Parameter(name="property", value="signUpSignIn"))
+	private int userRegNo;
 	
-	@Column(name="hotel_name",length=60)
+	@Column(name="hotel_name")
 	private String hotelName;
 	
-	@Column(name="address",length=200)
+	@Column(name="address")
 	private String address;
 	
 	@Column(name="is_active")
@@ -54,20 +52,20 @@ public class Hotel implements Serializable {
 	
 	@OneToOne
 	@PrimaryKeyJoinColumn
-	private UserRegistration userRegistration;
+	private SignUpSignIn signUpSignIn;
 
 	/**
-	 * @return the userId
+	 * @return the userRegNo
 	 */
-	public Integer getUserId() {
-		return userId;
+	public int getUserRegNo() {
+		return userRegNo;
 	}
 
 	/**
-	 * @param userId the userId to set
+	 * @param userRegNo the userRegNo to set
 	 */
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public void setUserRegNo(int userRegNo) {
+		this.userRegNo = userRegNo;
 	}
 
 	/**
@@ -113,17 +111,17 @@ public class Hotel implements Serializable {
 	}
 
 	/**
-	 * @return the userRegistration
+	 * @return the signUpSignIn
 	 */
-	public UserRegistration getUserRegistration() {
-		return userRegistration;
+	public SignUpSignIn getSignUpSignIn() {
+		return signUpSignIn;
 	}
 
 	/**
-	 * @param userRegistration the userRegistration to set
+	 * @param signUpSignIn the signUpSignIn to set
 	 */
-	public void setUserRegistration(UserRegistration userRegistration) {
-		this.userRegistration = userRegistration;
+	public void setSignUpSignIn(SignUpSignIn signUpSignIn) {
+		this.signUpSignIn = signUpSignIn;
 	}
 
 	/**
@@ -133,13 +131,22 @@ public class Hotel implements Serializable {
 		return serialVersionUID;
 	}
 
-	public Hotel(Integer userId, String hotelName, String address,
-			boolean isActive, UserRegistration userRegistration) {
+	public Hotel(int userRegNo, String hotelName, String address,
+			boolean isActive, SignUpSignIn signUpSignIn) {
 		super();
-		this.userId = userId;
+		this.userRegNo = userRegNo;
 		this.hotelName = hotelName;
 		this.address = address;
 		this.isActive = isActive;
-		this.userRegistration = userRegistration;
+		this.signUpSignIn = signUpSignIn;
+	}
+
+	public Hotel(String hotelName, String address, boolean isActive,
+			SignUpSignIn signUpSignIn) {
+		super();
+		this.hotelName = hotelName;
+		this.address = address;
+		this.isActive = isActive;
+		this.signUpSignIn = signUpSignIn;
 	}	
 }
