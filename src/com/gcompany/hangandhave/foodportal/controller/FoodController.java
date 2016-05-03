@@ -80,7 +80,8 @@ public class FoodController {
 		}
 		model.put("foodItems", foodItems);
 		model.put("foodMenu", foodItemName);
-		modelAndView.setViewName("Home");
+//		modelAndView.setViewName("Home");
+		modelAndView.setViewName("registration");	
 		return modelAndView;
 	}
 	
